@@ -6,7 +6,7 @@
   <link href="https://janlin002.github.io/atom.xml" rel="self"/>
   
   <link href="https://janlin002.github.io/"/>
-  <updated>2021-08-10T12:37:00.676Z</updated>
+  <updated>2021-08-10T12:50:47.437Z</updated>
   <id>https://janlin002.github.io/</id>
   
   <author>
@@ -17,24 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>我的第一篇部落格文章</title>
+    <title>解決github無法push，requested URL returned error: 403問題</title>
+    <link href="https://janlin002.github.io/2021/08/10/%E8%A7%A3%E6%B1%BAgithub%E7%84%A1%E6%B3%95push%EF%BC%8Crequested-URL-returned-error-403%E5%95%8F%E9%A1%8C/"/>
+    <id>https://janlin002.github.io/2021/08/10/%E8%A7%A3%E6%B1%BAgithub%E7%84%A1%E6%B3%95push%EF%BC%8Crequested-URL-returned-error-403%E5%95%8F%E9%A1%8C/</id>
+    <published>2021-08-10T12:44:34.000Z</published>
+    <updated>2021-08-10T12:50:47.437Z</updated>
+    
+    <content type="html"><![CDATA[<p>2021/07/28</p><p>先來講一下為什麼會寫這篇文章…</p><p>原本今天會跟平常一樣開心的寫筆記，並且開開心心的 push 到 github，最後再開開心心地看著自己的 commit 數增加，畫面看起來更綠油油</p><p>但奇怪的事發生了，當我輸入 git push origin master 時，卻跳出錯誤…當下以為是我輸入錯誤，所以也就再輸了一次，不過卻跳出一樣的錯誤，仔細看了一下:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Password authentication is temporarily disabled as part of a brownout. Please use a personal access token instead.</span><br><span class="line">The requested URL returned error: 403</span><br></pre></td></tr></table></figure><p>慘了，這什麼鬼？我根本沒遇過這個問題，查了一下網站，各種解法如春雨冒出，看的我眼花撩亂，索性就先重開電腦、更新我的 git，看會不會問題就解決(怎麼會想說重新啟動就能解決呢？哎…)，但發現問題並沒有解決，只好硬著頭皮去找其他方法，(先說一下我的 github 是用 http 方法處理的)</p><p>首先我查在 google 上輸入了關鍵字：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Password authentication is temporarily disabled as part of a brownout. Please use a personal access token instead.</span><br></pre></td></tr></table></figure><p>結果出來的第一個結果看起來蠻有說服力的，連結，稍微看了一下，卻卻步了，一下要 Creating a personal access token，一下要 Using a Token on the Command Line，看著我頭都昏了，怕一出錯會很麻煩，所以只能找其他方法了…<br>所以我就再 google 輸入第二行報錯程式碼：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The requested URL returned error: 403</span><br></pre></td></tr></table></figure><p>也是稍微看了一下幾篇文章，不過這次卻有不同的發現，我看到很多篇文章都有提到 SSH，但本身對 SSH 並不是很了解，只知道在做 clone 時，會有 http 跟 SSH 兩種方法，官方主要提倡 http 方法所以也就沒有對 SSH 有其他的研究，真正有幫助我解決問題的其實是 Ray 助教的文章(文章發表於 2021–06–30，要是我早了幾天遇到這個問題，可能就無解了…)，文章有提到：</p><blockquote><p>會發生這個問題的原因是因為 GitHub 官方在 2020 年 11 月 13 日開始陸續不支援使用帳號密碼的身份認證，也就是 HTTPS 的模式上傳</p></blockquote><p>所以之後可能就會以 SSH 方式為主流，乾脆現在開始學習，至於如何設立 SHH 金鑰，主要是看卡斯柏老師的<a href="https://wcc723.github.io/git/2018/02/12/github-ssh-https/">技術文章</a>，跟<a href="https://backlog.com/git-tutorial/tw/reference/ssh.html">猴子都能懂的 Git 入門指南</a>，</p><p>程式碼的部分，簡單講一下大概的部分，詳細的部分還請移步到上面兩個網站了…</p><p>首先，請在終端機輸入：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure><p>記得要把 email 部分改成你自己的 email，然後一路按 Enter，並且到輸入密碼的地方輸入你希望的金鑰密碼(很重要)</p><p>接著輸入:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(ssh-agent -s)</span>&quot;</span></span><br><span class="line">ssh-add -K ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure><p>後面我的步驟跟卡斯柏老師不一樣，我是直接輸入：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">// 執行上方命令就可以確認產生SSH連線所需要公開金鑰的內容。然後會看到如下的一串亂碼(每個人不一樣)</span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkkJvxyDVh9a+zH1f7ZQq/JEI79dVjDSG</span><br><span class="line">4RzttQwfK+sgWEr0aAgfnxdxQeDKxIxqI1SwyTY8oCcWzvpORuPqwbc7UWWPcCvbQ3jlEdN</span><br><span class="line">5jvwKM82hincEWwI3wzcnVg2Mn8dH86b5m6REDzwRgozQ3lqrgwGVlTvkHDFs6H0b/1PSrM</span><br><span class="line">XGppOP/QXGEVhZ6Hy4m3b1wMjjrbYwmWIeYklgoGHyrldhAaDYc33y7aUcRyFyq5DubtsLn</span><br><span class="line">2oj4K+1q36iviCHxCOri0FDmn2dzylRCI4S+A2/P7Y7rVfdT+8OWYKCBUs8lfjujghEtejq</span><br><span class="line">Qmj9ikyGTEAW1zQCN7hVwYdjL hoge@hoge.local</span><br></pre></td></tr></table></figure><p>記得需全部複製，不然會沒有效果，最後到 Github 的 Setting，選擇左側選單的</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHH and GPG keys</span><br></pre></td></tr></table></figure><p>並建立新的 SHH Keys，把剛剛的金鑰內容貼上即可</p><p>不過還沒結束，須回到專案中，使用 SHH 方式 clone 一次舊的專案，再 Push 一次就可以了~~</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;2021/07/28&lt;/p&gt;
+&lt;p&gt;先來講一下為什麼會寫這篇文章…&lt;/p&gt;
+&lt;p&gt;原本今天會跟平常一樣開心的寫筆記，並且開開心心的 push 到 github，最後再開開心心地看著自己的 commit 數增加，畫面看起來更綠油油&lt;/p&gt;
+&lt;p&gt;但奇怪的事發生了，當我輸入 g</summary>
+      
+    
+    
+    
+    <category term="frontend" scheme="https://janlin002.github.io/categories/frontend/"/>
+    
+    
+    <category term="frontend" scheme="https://janlin002.github.io/tags/frontend/"/>
+    
+    <category term="git" scheme="https://janlin002.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>疫情下的工作好找嗎？- 前端工程師篇</title>
     <link href="https://janlin002.github.io/2021/08/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/"/>
     <id>https://janlin002.github.io/2021/08/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/</id>
     <published>2021-08-08T07:13:46.000Z</published>
-    <updated>2021-08-10T12:37:00.676Z</updated>
+    <updated>2021-08-10T12:42:10.938Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="我的第一個部落格"><a href="#我的第一個部落格" class="headerlink" title="我的第一個部落格"></a>我的第一個部落格</h3><h3 id="歡迎大家參觀"><a href="#歡迎大家參觀" class="headerlink" title="歡迎大家參觀"></a>歡迎大家參觀</h3>]]></content>
+    <content type="html"><![CDATA[<p>在開始今天的主題之前，我先說一下我的背景</p><p>我今年 23 歲，大學後去過一家科技公司做了五個月的前端工程師，在今年的五月離開了前公司，時間剛好是台灣爆發嚴重疫情的那段時間，沒過一個月政府就開始三級警戒了，不過離職後我沒有馬上去找下一份工作，而是希望可以先精進自己，再從新開始…</p><p>原本以為會是如政府所說延期到 5/28 就會解除，所以就想說靜觀其變，然後再開始決定投遞履歷，結果一延再延，延到現在(2021/07/30)，好的，背景講完了，現在要開始正題了。</p><p>疫情下的工作好找嗎？我可以直接告訴你，不好找，不是不好找而已，而是很難找，不對，應該是找不到…是不是想說看不下去了？先別走啊，都點進來了…</p><p>為什麼我會說很難找呢？其實可以從幾個面向來看，首先會有職缺其實主要是兩種可能造成的:</p><ol><li>前職員提出離職，所以出現職缺，公司只能找尋可以填補空位的人</li><li>公司需求量增加，所以需要更多的人幫他解決問題</li></ol><p>先以第一點開始看，因為疫情肆虐，所以我相信沒有人會現在提出離職，即使不習慣公司，也會希望疫情結束再換，畢竟大家都知道現在離開，不知道多久會有新工作，再從第二點來看，公司在疫情期間也是資金吃緊，在這種情況下，很難再去招聘新的人手，以前端職缺來看，每天求才的公司其實不會超過 10 家，頂多就是舊公司一直在更新他們的網站，鮮少看到有新的職缺，看到這裡是不是覺得沒希望了？先不要失望，從現在開始就是寫作文的「轉」的部分</p><p>以前端工程師為例(其他行業我不懂)，現在有兩種人比較好找工作，一種是對工作沒有太多需求，例如：博弈、駐點公司，並不是說這兩種行業不好，而是這兩種行業的流動量相對高，所以會需要的人也比較多，筆者本人在疫情期間收到約 25 封這樣的公司的面試邀請(只面試了一家，其他都拒絕了)，給大家做參考，而這兩種行業基本上會直接面試你，從視訊面試中考你基本的 JavaScript，然後決定要不要用你，所以如果有興趣的朋友可能需要先稍微看一下基本的 JavaScript，就會有很大的機會錄取，再來說第二種很好找工作的人，就是會資料結構的人(算是筆者本身的切身之痛)，會這麼說的原因是現在大公司也會在這時候招人，通常他們在面試前會先請你寫三到五題“基本”的題目，然後再跟他們的主管面試，所以如果寫得出來的話會是很大的加分(之後可能會分享自己刷題的筆記)，相信會提升很大的錄取率，為什麼會說相信呢…？大家心裡有底</p><p>時間也不早了(12:10)，祝所有在找工作的人都找到工作，我們一起加油，掰掰<br>(以上算是個人的經驗，大家就當睡前故事看看就好)</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;我的第一個部落格&quot;&gt;&lt;a href=&quot;#我的第一個部落格&quot; class=&quot;headerlink&quot; title=&quot;我的第一個部落格&quot;&gt;&lt;/a&gt;我的第一個部落格&lt;/h3&gt;&lt;h3 id=&quot;歡迎大家參觀&quot;&gt;&lt;a href=&quot;#歡迎大家參觀&quot; class=&quot;headerli</summary>
+    <summary type="html">&lt;p&gt;在開始今天的主題之前，我先說一下我的背景&lt;/p&gt;
+&lt;p&gt;我今年 23 歲，大學後去過一家科技公司做了五個月的前端工程師，在今年的五月離開了前公司，時間剛好是台灣爆發嚴重疫情的那段時間，沒過一個月政府就開始三級警戒了，不過離職後我沒有馬上去找下一份工作，而是希望可以先精進自己</summary>
       
     
     
     
-    <category term="測試" scheme="https://janlin002.github.io/categories/%E6%B8%AC%E8%A9%A6/"/>
+    <category term="job" scheme="https://janlin002.github.io/categories/job/"/>
     
+    
+    <category term="job" scheme="https://janlin002.github.io/tags/job/"/>
+    
+    <category term="frontend" scheme="https://janlin002.github.io/tags/frontend/"/>
     
   </entry>
   

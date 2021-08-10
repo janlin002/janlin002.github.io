@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"janlin002.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="2021&#x2F;07&#x2F;28 先來講一下為什麼會寫這篇文章… 原本今天會跟平常一樣開心的寫筆記，並且開開心心的 push 到 github，最後再開開心心地看著自己的 commit 數增加，畫面看起來更綠油油 但奇怪的事發生了，當我輸入 git push origin master 時，卻跳出錯誤…當下以為是我輸入錯誤，所以也就再輸了一次，不過卻跳出一樣的錯誤，仔細看了一下: 12Password aut">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://janlin002.github.io/2021/08/08/hello-world/index.html">
+<meta property="og:title" content="解決github無法push，requested URL returned error: 403問題">
+<meta property="og:url" content="https://janlin002.github.io/2021/08/10/%E8%A7%A3%E6%B1%BAgithub%E7%84%A1%E6%B3%95push%EF%BC%8Crequested-URL-returned-error-403%E5%95%8F%E9%A1%8C/index.html">
 <meta property="og:site_name" content="Jan&#39;s World">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="2021&#x2F;07&#x2F;28 先來講一下為什麼會寫這篇文章… 原本今天會跟平常一樣開心的寫筆記，並且開開心心的 push 到 github，最後再開開心心地看著自己的 commit 數增加，畫面看起來更綠油油 但奇怪的事發生了，當我輸入 git push origin master 時，卻跳出錯誤…當下以為是我輸入錯誤，所以也就再輸了一次，不過卻跳出一樣的錯誤，仔細看了一下: 12Password aut">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-08-08T07:09:03.261Z">
-<meta property="article:modified_time" content="2021-08-08T07:09:03.261Z">
+<meta property="article:published_time" content="2021-08-10T12:44:34.000Z">
+<meta property="article:modified_time" content="2021-08-10T12:50:47.437Z">
 <meta property="article:author" content="Jan">
-<meta property="article:tag" content="前端,後端,全端,網頁,技術,網頁開發,前端開發,後端開發,JavaScript,HTML,CSS,SCSS">
+<meta property="article:tag" content="frontend">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://janlin002.github.io/2021/08/08/hello-world/">
+<link rel="canonical" href="https://janlin002.github.io/2021/08/10/%E8%A7%A3%E6%B1%BAgithub%E7%84%A1%E6%B3%95push%EF%BC%8Crequested-URL-returned-error-403%E5%95%8F%E9%A1%8C/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>Hello World | Jan's World</title>
+  <title>解決github無法push，requested URL returned error: 403問題 | Jan's World</title>
   
 
 
@@ -192,7 +193,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://janlin002.github.io/2021/08/08/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://janlin002.github.io/2021/08/10/%E8%A7%A3%E6%B1%BAgithub%E7%84%A1%E6%B3%95push%EF%BC%8Crequested-URL-returned-error-403%E5%95%8F%E9%A1%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.ibb.co/Qf0jhDN/octocat.png">
@@ -205,7 +206,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          解決github無法push，requested URL returned error: 403問題
         </h1>
 
         <div class="post-meta">
@@ -214,8 +215,18 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2021-08-08 15:09:03" itemprop="dateCreated datePublished" datetime="2021-08-08T15:09:03+08:00">2021-08-08</time>
+              <time title="創建時間：2021-08-10 20:44:34 / 修改時間：20:50:47" itemprop="dateCreated datePublished" datetime="2021-08-10T20:44:34+08:00">2021-08-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
             </span>
 
           <br>
@@ -224,14 +235,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>367</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
+              <span>2 分鐘</span>
             </span>
 
         </div>
@@ -243,19 +254,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>2021/07/28</p>
+<p>先來講一下為什麼會寫這篇文章…</p>
+<p>原本今天會跟平常一樣開心的寫筆記，並且開開心心的 push 到 github，最後再開開心心地看著自己的 commit 數增加，畫面看起來更綠油油</p>
+<p>但奇怪的事發生了，當我輸入 git push origin master 時，卻跳出錯誤…當下以為是我輸入錯誤，所以也就再輸了一次，不過卻跳出一樣的錯誤，仔細看了一下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Password authentication is temporarily disabled as part of a brownout. Please use a personal access token instead.</span><br><span class="line">The requested URL returned error: 403</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>慘了，這什麼鬼？我根本沒遇過這個問題，查了一下網站，各種解法如春雨冒出，看的我眼花撩亂，索性就先重開電腦、更新我的 git，看會不會問題就解決(怎麼會想說重新啟動就能解決呢？哎…)，但發現問題並沒有解決，只好硬著頭皮去找其他方法，(先說一下我的 github 是用 http 方法處理的)</p>
+<p>首先我查在 google 上輸入了關鍵字：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Password authentication is temporarily disabled as part of a brownout. Please use a personal access token instead.</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>結果出來的第一個結果看起來蠻有說服力的，連結，稍微看了一下，卻卻步了，一下要 Creating a personal access token，一下要 Using a Token on the Command Line，看著我頭都昏了，怕一出錯會很麻煩，所以只能找其他方法了…<br>所以我就再 google 輸入第二行報錯程式碼：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The requested URL returned error: 403</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>也是稍微看了一下幾篇文章，不過這次卻有不同的發現，我看到很多篇文章都有提到 SSH，但本身對 SSH 並不是很了解，只知道在做 clone 時，會有 http 跟 SSH 兩種方法，官方主要提倡 http 方法所以也就沒有對 SSH 有其他的研究，真正有幫助我解決問題的其實是 Ray 助教的文章(文章發表於 2021–06–30，要是我早了幾天遇到這個問題，可能就無解了…)，文章有提到：</p>
+<blockquote>
+<p>會發生這個問題的原因是因為 GitHub 官方在 2020 年 11 月 13 日開始陸續不支援使用帳號密碼的身份認證，也就是 HTTPS 的模式上傳</p>
+</blockquote>
+<p>所以之後可能就會以 SSH 方式為主流，乾脆現在開始學習，至於如何設立 SHH 金鑰，主要是看卡斯柏老師的<a target="_blank" rel="noopener" href="https://wcc723.github.io/git/2018/02/12/github-ssh-https/">技術文章</a>，跟<a target="_blank" rel="noopener" href="https://backlog.com/git-tutorial/tw/reference/ssh.html">猴子都能懂的 Git 入門指南</a>，</p>
+<p>程式碼的部分，簡單講一下大概的部分，詳細的部分還請移步到上面兩個網站了…</p>
+<p>首先，請在終端機輸入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>記得要把 email 部分改成你自己的 email，然後一路按 Enter，並且到輸入密碼的地方輸入你希望的金鑰密碼(很重要)</p>
+<p>接著輸入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(ssh-agent -s)</span>&quot;</span></span><br><span class="line">ssh-add -K ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+
+<p>後面我的步驟跟卡斯柏老師不一樣，我是直接輸入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">// 執行上方命令就可以確認產生SSH連線所需要公開金鑰的內容。然後會看到如下的一串亂碼(每個人不一樣)</span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkkJvxyDVh9a+zH1f7ZQq/JEI79dVjDSG</span><br><span class="line">4RzttQwfK+sgWEr0aAgfnxdxQeDKxIxqI1SwyTY8oCcWzvpORuPqwbc7UWWPcCvbQ3jlEdN</span><br><span class="line">5jvwKM82hincEWwI3wzcnVg2Mn8dH86b5m6REDzwRgozQ3lqrgwGVlTvkHDFs6H0b/1PSrM</span><br><span class="line">XGppOP/QXGEVhZ6Hy4m3b1wMjjrbYwmWIeYklgoGHyrldhAaDYc33y7aUcRyFyq5DubtsLn</span><br><span class="line">2oj4K+1q36iviCHxCOri0FDmn2dzylRCI4S+A2/P7Y7rVfdT+8OWYKCBUs8lfjujghEtejq</span><br><span class="line">Qmj9ikyGTEAW1zQCN7hVwYdjL hoge@hoge.local</span><br></pre></td></tr></table></figure>
+
+<p>記得需全部複製，不然會沒有效果，最後到 Github 的 Setting，選擇左側選單的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHH and GPG keys</span><br></pre></td></tr></table></figure>
+
+<p>並建立新的 SHH Keys，把剛剛的金鑰內容貼上即可</p>
+<p>不過還沒結束，須回到專案中，使用 SHH 方式 clone 一次舊的專案，再 Push 一次就可以了~~</p>
 
     </div>
 
@@ -264,17 +296,21 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/frontend/" rel="tag"># frontend</a>
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/08/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/" rel="next" title="疫情下的工作好找嗎？- 前端工程師篇">
-      疫情下的工作好找嗎？- 前端工程師篇 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/08/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/" rel="prev" title="疫情下的工作好找嗎？- 前端工程師篇">
+      <i class="fa fa-chevron-left"></i> 疫情下的工作好找嗎？- 前端工程師篇
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -333,7 +369,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
