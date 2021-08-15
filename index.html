@@ -190,6 +190,119 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://janlin002.github.io/2021/08/15/%E8%A7%A3%E6%B1%BAunable-to-access-https-github-com-xxx-xxx-github-io-git-The-requested-URL-returned-error-403%E5%95%8F%E9%A1%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.ibb.co/Qf0jhDN/octocat.png">
+      <meta itemprop="name" content="Jan">
+      <meta itemprop="description" content="未來的你，會感謝現在努力的自己">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jan's World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/15/%E8%A7%A3%E6%B1%BAunable-to-access-https-github-com-xxx-xxx-github-io-git-The-requested-URL-returned-error-403%E5%95%8F%E9%A1%8C/" class="post-title-link" itemprop="url">解決unable to access https://github.com/xxx/xxx.github.io.git/: The requested URL returned error: 403問題</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-08-15 11:17:50 / 修改時間：12:11:14" itemprop="dateCreated datePublished" datetime="2021-08-15T11:17:50+08:00">2021-08-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>872</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2021/08/15</p>
+<p>今天一早起來想說來更新一下我的 Blog，誰知道在我按下 hexo d 的那一刻，居然跳出錯誤:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unable to access <span class="string">&#x27;https://github.com/janlin002/janlin002.github.io.git/&#x27;</span>: The requested URL returned error: <span class="number">403</span></span><br><span class="line"><span class="comment">// 我的Github是janlin002，所以中間才會顯示janlin002</span></span><br></pre></td></tr></table></figure>
+
+<p>當下想說：不會吧！又來？只好硬著頭皮來解決了…</p>
+<p>我一共找到三個解決方法，但我真正能解決的是第三個，也許你用第一或第二個方法就可以解決也說不定</p>
+<ul>
+<li>首先是修改_config.yml 檔案,的 repo 值，改成：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repo: https:<span class="comment">//使用者名稱:github密碼@github.com/janlin002/janlin002.github.io</span></span><br><span class="line">ex. https:<span class="comment">//janlin002:github密碼@github.com/janlin002/janlin002.github.io</span></span><br></pre></td></tr></table></figure>
+
+<p>但沒有效果，可能是<a target="_blank" rel="noopener" href="https://www.itread01.com/content/1544833994.html">文章</a>有點年代了(2018)，只好換另一種方式</p>
+<ul>
+<li>使用 Travis CI</li>
+</ul>
+<blockquote>
+<p>Travis CI 是在軟體開發領域中的一個線上的，分散式的持續整合服務，用來構建及測試在 GitHub 代管的代碼。這個軟體的代碼同時也是開源的，可以在 GitHub 上下載到，儘管開發者當前並不推薦在閉源專案中單獨使用它。</p>
+</blockquote>
+<p>上面是維基百科的介紹，聰明的你，一定看出我想使用 SSH 來上傳，這樣一來，就跟前面的文章一樣的解法，不過仔細想想如果只是想更改為 SSH 沒必要使用到 Travis CI，所以就有第三種解法了</p>
+<p>至於 Travis CI 的操作這邊不多做著墨，以下提供幾的資源給大家參考:</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/github-pages.html">官方網站</a> // 如果覺得看不太懂沒關係，我們都一樣…</p>
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10251088">Ray IT 鐵人幫</a> // 推</p>
+<p>另外私心推薦 Ray 的<a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20119486/ironman/2944">鐵人幫文章</a>，真的很仔細!!</p>
+<ul>
+<li>第三種方式是直接更改為 SSH 部署方式</li>
+</ul>
+<p>首先先進入到你自己 github 的專案頁面，並且點選 code</p>
+<p><img src="https://i.ibb.co/0D2YJsS/2021-08-15-12-06-04.png" alt="image1"></p>
+<p>並且把 SSH 的的網址全部複製，貼到 repo 的位置</p>
+<p><img src="https://i.ibb.co/SBq4WVP/2021-08-15-12-09-49.png" alt="image2"></p>
+<p>接著重新部署一次，就可以嘍</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://janlin002.github.io/2021/08/10/%E8%A7%A3%E6%B1%BAgithub%E7%84%A1%E6%B3%95push%EF%BC%8Crequested-URL-returned-error-403%E5%95%8F%E9%A1%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -474,7 +587,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -537,7 +650,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="總字數">3k</span>
+    <span title="總字數">4k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
