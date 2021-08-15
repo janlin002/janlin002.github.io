@@ -100,7 +100,10 @@
 <li>第三種方式是直接更改為 SSH 部署方式</li>
 </ul>
 <p>首先先進入到你自己 github 的專案頁面，並且點選 code</p>
-<p><img src="https://i.ibb.co/0D2YJsS/2021-08-15-12-06-04.png" alt="image1"></p>
+<!-- ![image1](https://i.ibb.co/0D2YJsS/2021-08-15-12-06-04.png?10001000) -->
+
+<img src="https://i.ibb.co/0D2YJsS/2021-08-15-12-06-04.png" width=800 height=400 />
+
 <p>並且把 SSH 的的網址全部複製，貼到 repo 的位置</p>
 <p><img src="https://i.ibb.co/SBq4WVP/2021-08-15-12-09-49.png" alt="image2"></p>
 <p>接著重新部署一次，就可以嘍</p>
