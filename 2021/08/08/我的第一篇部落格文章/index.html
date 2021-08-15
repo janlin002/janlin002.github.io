@@ -28,7 +28,7 @@
 <meta property="og:description" content="在開始今天的主題之前，我先說一下我的背景 我今年 23 歲，大學後去過一家科技公司做了五個月的前端工程師，在今年的五月離開了前公司，時間剛好是台灣爆發嚴重疫情的那段時間，沒過一個月政府就開始三級警戒了，不過離職後我沒有馬上去找下一份工作，而是希望可以先精進自己，再從新開始… 原本以為會是如政府所說延期到 5&#x2F;28 就會解除，所以就想說靜觀其變，然後再開始決定投遞履歷，結果一延再延，延到現在(202">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-08-08T07:13:46.000Z">
-<meta property="article:modified_time" content="2021-08-10T12:42:10.938Z">
+<meta property="article:modified_time" content="2021-08-15T12:44:49.713Z">
 <meta property="article:author" content="Jan">
 <meta property="article:tag" content="job">
 <meta property="article:tag" content="frontend">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-08-10 20:42:10" itemprop="dateModified" datetime="2021-08-10T20:42:10+08:00">2021-08-10</time>
+                <time title="修改時間：2021-08-15 20:44:49" itemprop="dateModified" datetime="2021-08-15T20:44:49+08:00">2021-08-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,7 +236,21 @@
                 </span>
             </span>
 
-          <br>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/08/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/08/我的第一篇部落格文章/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
             <span class="post-meta-item" title="文章字數">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -308,6 +322,13 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -427,7 +448,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Jan</span>
+  <span class="author" itemprop="copyrightHolder">若要轉載文章，麻煩請保留原作者名稱與原始連結。</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
@@ -496,6 +517,37 @@
   
 
   
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://janlin002.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://janlin002.github.io/2021/08/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/";
+    this.page.identifier = "2021/08/08/我的第一篇部落格文章/";
+    this.page.title = "疫情下的工作好找嗎？- 前端工程師篇";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://janlin002.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
 </body>
 </html>
