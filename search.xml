@@ -106,6 +106,7 @@
 
 <p>並且把 SSH 的的網址全部複製，貼到 repo 的位置</p>
 <p><img src="https://i.ibb.co/SBq4WVP/2021-08-15-12-09-49.png" alt="image2"></p>
+<p><a href="https://ithelp.ithome.com.tw/articles/10208581">六角學院</a></p>
 <p>接著重新部署一次，就可以嘍</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 ]]></content>
