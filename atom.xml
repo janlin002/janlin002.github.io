@@ -6,7 +6,7 @@
   <link href="https://janlin002.github.io/atom.xml" rel="self"/>
   
   <link href="https://janlin002.github.io/"/>
-  <updated>2021-08-15T04:19:22.377Z</updated>
+  <updated>2021-08-16T06:27:30.073Z</updated>
   <id>https://janlin002.github.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linked List 菜鳥學習日記</title>
+    <link href="https://janlin002.github.io/2021/08/16/Linked-List-%E8%8F%9C%E9%B3%A5%E5%AD%B8%E7%BF%92%E6%97%A5%E8%A8%98/"/>
+    <id>https://janlin002.github.io/2021/08/16/Linked-List-%E8%8F%9C%E9%B3%A5%E5%AD%B8%E7%BF%92%E6%97%A5%E8%A8%98/</id>
+    <published>2021-08-16T06:26:11.000Z</published>
+    <updated>2021-08-16T06:27:30.073Z</updated>
+    
+    
+    
+    
+    <category term="data structure" scheme="https://janlin002.github.io/categories/data-structure/"/>
+    
+    
+    <category term="data structure" scheme="https://janlin002.github.io/tags/data-structure/"/>
+    
+  </entry>
   
   <entry>
     <title>解決unable to access https://github.com/xxx/xxx.github.io.git/: The requested URL returned error: 403問題</title>
