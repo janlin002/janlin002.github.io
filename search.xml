@@ -130,8 +130,8 @@
       </tags>
   </entry>
   <entry>
-    <title>快速建立 Jest X Next 環境環境</title>
-    <url>/2021/08/16/%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B-Jest-X-Next-%E7%92%B0%E5%A2%83%E7%92%B0%E5%A2%83/</url>
+    <title>快速建立 Jest X Next 環境</title>
+    <url>/2021/08/16/%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B-Jest-X-Next-%E7%92%B0%E5%A2%83/</url>
     <content><![CDATA[<h2 id="快速建立-Next-專案"><a href="#快速建立-Next-專案" class="headerlink" title="快速建立 Next 專案"></a>快速建立 Next 專案</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npx create-next-app project-name</span><br><span class="line"><span class="comment">// project-name 需自己定義</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="引入-Jest"><a href="#引入-Jest" class="headerlink" title="引入 Jest"></a>引入 Jest</h2><h3 id="下載相關套件"><a href="#下載相關套件" class="headerlink" title="下載相關套件"></a>下載相關套件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm install jest babel-jest @babel/preset-env @babel/preset-react react-test-renderer -g</span><br><span class="line">or</span><br><span class="line">yarn add --dev jest babel-jest @babel/preset-env @babel/preset-react react-test-renderer</span><br></pre></td></tr></table></figure>
@@ -143,5 +143,12 @@
 
 <h3 id="建立-babel-config-js"><a href="#建立-babel-config-js" class="headerlink" title="建立 babel.config.js"></a>建立 babel.config.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">presets</span>: [<span class="string">&#x27;@babel/preset-env&#x27;</span>, <span class="string">&#x27;@babel/preset-react&#x27;</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>frontend</category>
+      </categories>
+      <tags>
+        <tag>jest</tag>
+        <tag>next</tag>
+      </tags>
   </entry>
 </search>
