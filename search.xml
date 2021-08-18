@@ -71,6 +71,27 @@
       </tags>
   </entry>
   <entry>
+    <title>快速建立 CRA X TypeScript 環境</title>
+    <url>/2021/08/17/%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B-CRA-X-TypeScript-%E7%92%B0%E5%A2%83/</url>
+    <content><![CDATA[<h3 id="1-使用官方提供的方法"><a href="#1-使用官方提供的方法" class="headerlink" title="1. 使用官方提供的方法"></a>1. 使用官方提供的方法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npx create-react-app my-app --template typescript</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-想把舊專案升級成-Typescript"><a href="#2-想把舊專案升級成-Typescript" class="headerlink" title="2. 想把舊專案升級成 Typescript"></a>2. 想把舊專案升級成 Typescript</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm install --save typescript @types/node @types/react @types/react-dom @types/jest</span><br></pre></td></tr></table></figure>
+
+<p>這時候所有檔名還是 Js 檔，所以需手動更改為 Ts 檔，並修改錯誤</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Linked List 菜鳥學習日記</title>
+    <url>/2021/08/16/Linked-List-%E8%8F%9C%E9%B3%A5%E5%AD%B8%E7%BF%92%E6%97%A5%E8%A8%98/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>data structure</category>
+      </categories>
+      <tags>
+        <tag>data structure</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解決unable to access https://github.com/xxx/xxx.github.io.git/: The requested URL returned error: 403問題</title>
     <url>/2021/08/15/%E8%A7%A3%E6%B1%BAunable-to-access-https-github-com-xxx-xxx-github-io-git-The-requested-URL-returned-error-403%E5%95%8F%E9%A1%8C/</url>
     <content><![CDATA[<p>2021/08/15</p>
@@ -116,17 +137,6 @@
       <tags>
         <tag>frontend</tag>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linked List 菜鳥學習日記</title>
-    <url>/2021/08/16/Linked-List-%E8%8F%9C%E9%B3%A5%E5%AD%B8%E7%BF%92%E6%97%A5%E8%A8%98/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>data structure</category>
-      </categories>
-      <tags>
-        <tag>data structure</tag>
       </tags>
   </entry>
   <entry>

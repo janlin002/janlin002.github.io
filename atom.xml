@@ -6,7 +6,7 @@
   <link href="https://janlin002.github.io/atom.xml" rel="self"/>
   
   <link href="https://janlin002.github.io/"/>
-  <updated>2021-08-16T12:24:38.095Z</updated>
+  <updated>2021-08-17T05:49:05.300Z</updated>
   <id>https://janlin002.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速建立 CRA X TypeScript 環境</title>
+    <link href="https://janlin002.github.io/2021/08/17/%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B-CRA-X-TypeScript-%E7%92%B0%E5%A2%83/"/>
+    <id>https://janlin002.github.io/2021/08/17/%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B-CRA-X-TypeScript-%E7%92%B0%E5%A2%83/</id>
+    <published>2021-08-17T05:45:42.000Z</published>
+    <updated>2021-08-17T05:49:05.300Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-使用官方提供的方法"><a href="#1-使用官方提供的方法" class="headerlink" title="1. 使用官方提供的方法"></a>1. 使用官方提供的方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app --template typescript</span><br></pre></td></tr></table></figure><h3 id="2-想把舊專案升級成-Typescript"><a href="#2-想把舊專案升級成-Typescript" class="headerlink" title="2. 想把舊專案升級成 Typescript"></a>2. 想把舊專案升級成 Typescript</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save typescript @types/node @types/react @types/react-dom @types/jest</span><br></pre></td></tr></table></figure><p>這時候所有檔名還是 Js 檔，所以需手動更改為 Ts 檔，並修改錯誤</p>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;1-使用官方提供的方法&quot;&gt;&lt;a href=&quot;#1-使用官方提供的方法&quot; class=&quot;headerlink&quot; title=&quot;1. 使用官方提供的方法&quot;&gt;&lt;/a&gt;1. 使用官方提供的方法&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npx create-react-app my-app --template typescript&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;2-想把舊專案升級成-Typescript&quot;&gt;&lt;a href=&quot;#2-想把舊專案升級成-Typescript&quot; class=&quot;headerlink&quot; title=&quot;2. 想把舊專案升級成 Typescript&quot;&gt;&lt;/a&gt;2. 想把舊專案升級成 Typescript&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install --save typescript @types/node @types/react @types/react-dom @types/jest&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;這時候所有檔名還是 Js 檔，所以需手動更改為 Ts 檔，並修改錯誤&lt;/p&gt;
+</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>快速建立 Jest X Next 環境</title>
