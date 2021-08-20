@@ -190,6 +190,122 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://janlin002.github.io/2021/08/19/%E9%97%9C%E6%96%BC%E5%A6%82%E4%BD%95%E8%AA%BF%E7%94%A8redux%E7%9A%84state/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.ibb.co/Qf0jhDN/octocat.png">
+      <meta itemprop="name" content="Jan">
+      <meta itemprop="description" content="未來的你，會感謝現在努力的自己">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jan's World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/19/%E9%97%9C%E6%96%BC%E5%A6%82%E4%BD%95%E8%AA%BF%E7%94%A8redux%E7%9A%84state/" class="post-title-link" itemprop="url">關於如何調用redux的state</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-08-19 19:52:28" itemprop="dateCreated datePublished" datetime="2021-08-19T19:52:28+08:00">2021-08-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-08-20 20:24:35" itemprop="dateModified" datetime="2021-08-20T20:24:35+08:00">2021-08-20</time>
+              </span>
+
+          
+            <span id="/2021/08/19/%E9%97%9C%E6%96%BC%E5%A6%82%E4%BD%95%E8%AA%BF%E7%94%A8redux%E7%9A%84state/" class="post-meta-item leancloud_visitors" data-flag-title="關於如何調用redux的state" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/08/19/%E9%97%9C%E6%96%BC%E5%A6%82%E4%BD%95%E8%AA%BF%E7%94%A8redux%E7%9A%84state/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/19/關於如何調用redux的state/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>4 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Hello 各位，由於前面發了多廢文，所以這篇希望可以有點深度，<del>我很深，你忍一下</del></p>
+<p>這篇會介紹的幾種調用 redux state 的方式，都是工作上遇到的，算是長了知識，網路上也許會有相關教學，但這邊會以初學者的角度跟大家分享(因為我也是初學者，嗚嗚嗚)</p>
+<h2 id="首先：什麼是-Redux"><a href="#首先：什麼是-Redux" class="headerlink" title="首先：什麼是 Redux"></a>首先：什麼是 Redux</h2><blockquote>
+<p><strong><em>Redux 一個用於應用程式狀態管理的開源 JavaScript 庫。Redux 經常與 React 搭配運用，但其也可以獨立使用。 - 取自維基百科</em></strong></p>
+</blockquote>
+<p>是我的話，我會說是一個可以讓你把特殊資料全域的方法</p>
+<p>因為有了 redux 我們不用再在各個 Component 中傳遞 Props，當然除了 redux 還是有別的方法做資料的存儲，不過不是這篇的重點，所以這邊先跳過</p>
+<h2 id="感覺很好用欸，那要怎麼用？"><a href="#感覺很好用欸，那要怎麼用？" class="headerlink" title="感覺很好用欸，那要怎麼用？"></a>感覺很好用欸，那要怎麼用？</h2><p>在進入 redux 之前，你必須要知道 redux 三巨頭，<del>就跟 NBA 一樣一定會有三巨頭</del>，分別是：action, store, reducer，什麼鬼？行動商店減速器？<del>感覺很有商機欸</del>，先別急嘛…這邊我先講一下各自所做的事，再搭配圖片你一定會更加了解！</p>
+<p>題外話：很多人在學 redux 都喜歡使用圖書館的例子，不過像我們這種不喜歡讀書才來當工程師的人來說一點說服力都沒有啊…</p>
+<p>警告：這邊會有點黃色成份，所以覺得不適的話可以先跳到圖片部分</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/19/%E9%97%9C%E6%96%BC%E5%A6%82%E4%BD%95%E8%AA%BF%E7%94%A8redux%E7%9A%84state/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://janlin002.github.io/2021/08/17/%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B-CRA-X-TypeScript-%E7%92%B0%E5%A2%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -963,7 +1079,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1026,12 +1142,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="總字數">5k</span>
+    <span title="總字數">9k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">4 分鐘</span>
+    <span title="所需總閱讀時間">8 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
