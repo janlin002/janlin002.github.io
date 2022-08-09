@@ -1,0 +1,27 @@
+# 設置系統語言環境
+language: node_js
+# 是否需要 sudo 權限
+sudo: false
+# 設置node_js版本
+node_js:
+  - '12'
+# 設置暫存區塊
+cache:
+  apt: true
+  directories:
+    - node_modules # 不經常變動的資料夾
+# 指定部落格分支，一般來講是 Master，這是在告知當這個分支有 commit 時候就執行部屬指令
+branches:
+  only:
+    - master
+## 安裝 Hexo-Cli
+before_script:
+  - npm install hexo-cli -g # 安裝 Hexo 環境
+# 清除緩存並執行編譯
+script:
+  - hexo clean
+  - hexo generate
+## deploy 相關設置
+after_success:
+  - sed -i'' "/^ *repo/s~github\.com~${GITHUBHEXO_TOKEN}@github.com~" _config.yml
+  - hexo deploy

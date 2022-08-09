@@ -104,6 +104,8 @@ theme: next
 
 deploy:
   type: git
-  repo: https://github.com/janlin002/janlin002.github.io # ttps://github.com/hexojs/hexojs.github.io
+  repo: git@github.com:janlin002/janlin002.github.io.git
   branch: master # 在這邊我是使用 mster 當作主要分支
   message: 'myblog'
+
+  # https://github.com/janlin002/janlin002.github.io
