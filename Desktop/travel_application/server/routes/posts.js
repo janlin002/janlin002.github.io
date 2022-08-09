@@ -2,6 +2,9 @@ import express from 'express'
 
 import { getPosts, createPosts, updatePosts, deletePosts, likePosts } from '../controllers/posts.js'
 
+// 新增刪除修改都需要帶身份驗證 
+import auth from '../middleware/auth.js'
+
 const router = express.Router()
 
 //http://localhost:2000/posts
@@ -12,16 +15,16 @@ const router = express.Router()
 router.get('/', getPosts)
 
 // 上傳
-router.post('/', createPosts);
+router.post('/', auth, createPosts);
 
 // 更新
-router.patch('/:id', updatePosts) // 如果只是想要修改 api 裡的部分內容，可以考慮使用 patch
+router.patch('/:id', auth, updatePosts) // 如果只是想要修改 api 裡的部分內容，可以考慮使用 patch
 
 // 刪除功能
-router.delete('/:id', deletePosts)
+router.delete('/:id', auth, deletePosts)
 
 // 按讚功能
-router.patch('/:id/likePost', likePosts)
+router.patch('/:id/likePost', auth, likePosts)
 
 export default router
 

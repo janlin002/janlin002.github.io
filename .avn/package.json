@@ -1,0 +1,83 @@
+{
+  "_from": "avn",
+  "_id": "avn@0.2.4",
+  "_inBundle": false,
+  "_integrity": "sha512-erscAcPds+3UnBsct6H1dC25kFivCFriCe3QkL84qXEGWTQDkoFcK1ZcreWy8TPZVfY/m9TQRiI4CS2lIvT2YQ==",
+  "_location": "/avn",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "avn",
+    "name": "avn",
+    "escapedName": "avn",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/avn/-/avn-0.2.4.tgz",
+  "_shasum": "4e1f5f29482761493078dd37a4535a697479e619",
+  "_spec": "avn",
+  "_where": "/Users/jan/Desktop/Job-Demo",
+  "author": {
+    "name": "Whitney Young"
+  },
+  "bin": {
+    "avn": "bin-public/avn"
+  },
+  "bugs": {
+    "url": "https://github.com/wbyoung/avn/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "any-promise": "^1.1.0",
+    "bluebird": "^3.1.5",
+    "chalk": "^1.0.0",
+    "commander": "^2.2.0",
+    "lodash": "^4.1.0",
+    "mz": "^2.0.0",
+    "npm": "^3.9.6"
+  },
+  "deprecated": false,
+  "description": "Automatic Node Version Switching",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "chai-as-promised": "^5.1.0",
+    "concat-stream": "^1.4.6",
+    "coveralls": "^2.10.0",
+    "istanbul": "^0.4.2",
+    "jscs": "^3.0.4",
+    "jshint": "^2.8.0",
+    "mocha": "^2.0.1",
+    "sinon": "^1.10.2",
+    "sinon-chai": "^2.8.0",
+    "temp": "^0.8.0"
+  },
+  "homepage": "https://github.com/wbyoung/avn",
+  "keywords": [
+    "nvm",
+    "n",
+    "node",
+    "version",
+    "switch",
+    "automatic",
+    "cd",
+    "change",
+    "directory"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "avn",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wbyoung/avn.git"
+  },
+  "scripts": {
+    "test": "jshint . && jscs . && istanbul cover node_modules/.bin/_mocha --report html --",
+    "test-travis": "jshint . && jscs . && istanbul cover node_modules/.bin/_mocha --report lcovonly --"
+  },
+  "version": "0.2.4"
+}

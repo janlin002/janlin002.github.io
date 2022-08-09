@@ -1,0 +1,74 @@
+{
+  "_from": "avn-n",
+  "_id": "avn-n@0.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-7TnNQOuadlrVA4TFYYehCJxwZNbyIvL0UMhDKdZlWrrkitvf0tquM7Ng0GDcM4tfhoLz+DMKPXEJrMqaQ2maMA==",
+  "_location": "/avn-n",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "avn-n",
+    "name": "avn-n",
+    "escapedName": "avn-n",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/avn-n/-/avn-n-0.2.0.tgz",
+  "_shasum": "5b510f4fef7bb609f45620c48715f433e5a571ea",
+  "_spec": "avn-n",
+  "_where": "/Users/jan/Desktop/Job-Demo",
+  "author": {
+    "name": "Whitney Young"
+  },
+  "bugs": {
+    "url": "https://github.com/wbyoung/avn-n/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "bluebird": "^2.9.15",
+    "semver": "^4.3.3"
+  },
+  "deprecated": false,
+  "description": "avn plugin for n",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "coveralls": "^2.10.0",
+    "istanbul": "^0.3.11",
+    "jscs": "^1.13.1",
+    "jscs-jsdoc": "^1.1.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.0.1"
+  },
+  "homepage": "https://github.com/wbyoung/avn-n",
+  "keywords": [
+    "avn",
+    "node",
+    "n",
+    "version",
+    "switch",
+    "automatic",
+    "cd",
+    "change",
+    "directory"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "avn-n",
+  "peerDependencies": {
+    "avn": "0.2.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wbyoung/avn-n.git"
+  },
+  "scripts": {
+    "test": "jshint . && jscs . && istanbul cover node_modules/.bin/_mocha --report html --",
+    "test-travis": "jshint . && jscs . && istanbul cover node_modules/.bin/_mocha --report lcovonly --"
+  },
+  "version": "0.2.0"
+}

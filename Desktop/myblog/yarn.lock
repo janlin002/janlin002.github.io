@@ -3,6 +3,7 @@
 
 
 "@1v9/hexo-next-nightmode@github:1v9/hexo-next-nightmode":
+  "integrity" "sha512-/N3FUw6BTNzErlVPIUYyQb6D9QiXErTZC0GuIhF710gctABavVWV+KhnW5psHtMENgHde9mWrTpXTwexXuR4hw=="
   "resolved" "git+ssh://git@github.com/1v9/hexo-next-nightmode.git#a0b95c098a7476ba18c9b3c80487736678d13724"
   "version" "1.1.3"
   dependencies:
@@ -1968,6 +1969,7 @@
   "version" "0.6.2"
 
 "next-util@github:theme-next/next-util":
+  "integrity" "sha512-k8uMhCIFT8/rLOuvn2z7WELP9Oi9Z55USAzmo+sJzJrpfvAQrRA/qb63sTueMjeHH/L0B1Tmzc1MzE5ajwTOMA=="
   "resolved" "git+ssh://git@github.com/theme-next/next-util.git#1385e49864df0dc406805a1ee76b517de0f61320"
   "version" "1.0.0"
   dependencies:

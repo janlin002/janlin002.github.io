@@ -1,0 +1,94 @@
+'use strict';
+
+var plugin = require('..');
+var path = require('path');
+
+var chai = require('chai');
+var expect = chai.expect;
+
+describe('plugin', function() {
+  var prefix_ = process.env.N_PREFIX;
+  var prefix = path.resolve(path.join(__dirname, 'fixtures/n-1.2-prefix'));
+  beforeEach(function() { process.env.N_PREFIX = prefix; });
+  afterEach(function() { process.env.N_PREFIX = prefix_; });
+
+  it('matches exact version', function(done) {
+    plugin.match('0.11.13').then(function(result) {
+      expect(result).to.eql({
+        version: '0.11.13',
+        command: 'n 0.11.13 > /dev/null;'
+      });
+    })
+    .done(done);
+  });
+
+  it('matches with semver syntax', function(done) {
+    plugin.match('>=0.10 < 0.10.29').then(function(result) {
+      expect(result).to.eql({
+        version: '0.10.28',
+        command: 'n 0.10.28 > /dev/null;'
+      });
+    })
+    .done(done);
+  });
+
+  it('chooses greatest match', function(done) {
+    plugin.match('0.10').then(function(result) {
+      expect(result).to.eql({
+        version: '0.10.101',
+        command: 'n 0.10.101 > /dev/null;'
+      });
+    })
+    .done(done);
+  });
+
+  it('rejects versions not installed', function(done) {
+    plugin.match('0.9').then(
+      function() { throw new Error('Plugin should have rejected invalid version.'); },
+      function(e) { expect(e).to.match(/no version matching 0\.9/); })
+    .done(done);
+  });
+
+  it('has fallback prefix', function(done) {
+    delete process.env.N_PREFIX;
+    plugin.match('0.0').then(
+      function() { throw new Error('Plugin should have rejected invalid version.'); },
+      function(e) { expect(e).to.match(/no version matching 0\.0/); })
+    .done(done);
+  });
+
+  it('works when prefix is missing', function(done) {
+    process.env.N_PREFIX = '/path/that/we/know/will/never/exist';
+    plugin.match('0.0').then(
+      function() { throw new Error('Plugin should have rejected invalid version.'); },
+      function(e) { expect(e).to.match(/no version matching 0\.0/); })
+    .done(done);
+  });
+
+  it('works with 1.3.x layout (iojs support)', function(done) {
+    process.env.N_PREFIX = path.resolve(path.join(__dirname, 'fixtures/n-1.3-prefix'));
+    plugin.match('0.11.13').then(function(result) {
+      expect(result).to.eql({
+        version: '0.11.13',
+        command: 'n 0.11.13 > /dev/null;'
+      });
+    })
+    .done(done);
+  });
+
+  it('works with iojs commands', function(done) {
+    process.env.N_PREFIX = path.resolve(path.join(__dirname, 'fixtures/n-1.3-prefix'));
+    plugin.match('iojs-1.4').then(function(result) {
+      expect(result).to.eql({
+        version: '1.4.3',
+        command: 'n io 1.4.3 > /dev/null;'
+      });
+    })
+    .done(done);
+  });
+
+  it('finds iojs versions', function() {
+    expect(plugin._findVersion(['iojs-v1.1.0', 'v0.12.0'], 'iojs-v1.1'))
+      .to.eql('iojs-v1.1.0');
+  });
+});

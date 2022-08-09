@@ -1,0 +1,76 @@
+{
+  "_from": "avn-nvm",
+  "_id": "avn-nvm@0.2.2",
+  "_inBundle": false,
+  "_integrity": "sha512-4CJ10HxpyuAjxdGsnCd6fvayIGtJoqGTYaPVLamugofho5+gRgNDG7zJqriGXwkaDIDTsp1ZKZxEfjY7nbIeNg==",
+  "_location": "/avn-nvm",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "avn-nvm",
+    "name": "avn-nvm",
+    "escapedName": "avn-nvm",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/avn-nvm/-/avn-nvm-0.2.2.tgz",
+  "_shasum": "0a8be3bad6e5139fd1905ca12cf6889087ae48d1",
+  "_spec": "avn-nvm",
+  "_where": "/Users/jan/Desktop/Job-Demo",
+  "author": {
+    "name": "Whitney Young"
+  },
+  "bugs": {
+    "url": "https://github.com/wbyoung/avn-nvm/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "bluebird": "^2.9.15",
+    "concat-stream": "^1.4.6",
+    "semver": "^5.0.3"
+  },
+  "deprecated": false,
+  "description": "avn plugin for nvm",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.2",
+    "jscs": "2.1.1",
+    "jscs-jsdoc": "^1.1.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.0.1",
+    "sinon": "^1.14.1"
+  },
+  "homepage": "https://github.com/wbyoung/avn-nvm",
+  "keywords": [
+    "avn",
+    "node",
+    "n",
+    "version",
+    "switch",
+    "automatic",
+    "cd",
+    "change",
+    "directory"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "avn-nvm",
+  "peerDependencies": {
+    "avn": "0.2.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wbyoung/avn-nvm.git"
+  },
+  "scripts": {
+    "test": "jshint . && jscs . && istanbul cover node_modules/.bin/_mocha --report html --",
+    "test-travis": "jshint . && jscs . && istanbul cover node_modules/.bin/_mocha --report lcovonly --"
+  },
+  "version": "0.2.2"
+}

@@ -5,6 +5,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 
 import postRouter from './routes/posts.js'
+import userRouter from './routes/users.js'
 
 const app = express()
 dotenv.config()
@@ -18,6 +19,11 @@ app.use(bodyParser.json({limit: "30mb", extended: true}))
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}))
 
 app.use('/posts', postRouter)
+app.use('/users', userRouter)
+
+app.get('/', (req, res)=>{
+    res.send('ITS WORK')
+})
 
 // 解析urlencoded格式 請求大小限制: 30mb, 擴展
 
